@@ -92,6 +92,7 @@ img {
   letter-spacing: 0.02em;
   transition: color var(--timing-cubic);
 }
+
 .current-nav::after {
   position: absolute;
   content: "";
@@ -132,8 +133,16 @@ address {
   line-height: 1.5;
   transition: color var(--timing-cubic);
 }
+
 .active:hover,
 .active:focus {
+  color: var(--hover-color);
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--hover-color);
+}
+.current-nav {
   color: var(--hover-color);
 }
 /* hero */
@@ -573,12 +582,15 @@ address {
   width: 408px;
   height: 576px;
   background-color: var(--modal-window-background);
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .modal-close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 24px;
+  right: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -589,18 +601,21 @@ address {
   height: 24px;
   border-radius: 50%;
   background-color: var(--buttons-2page);
-  transition: border-color var(--timing-cubic);
+  transition: background-color var(--timing-cubic);
+  cursor: pointer;
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  border-color: var(--hover-color);
+  background-color: var(--hover-color);
+  border-color: transparent;
 }
 
 .modal-close-btn-icon {
   transition: fill var(--timing-cubic);
 }
+
 .modal-close-btn:hover .modal-close-btn-icon,
-.modal-close-btn:focus .modal-close-btn-icon {
-  fill: var(--hover-color);
+.modal-close-btn:hover .modal-close-btn-icon {
+  fill: var(--background);
 }
